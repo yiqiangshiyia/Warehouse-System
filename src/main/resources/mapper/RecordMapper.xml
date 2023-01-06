@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.RecordMapper">
+
+    <select id="pageCC" resultType="com.wms.entity.RecordRes">
+        select a.*,b.name goodsname,c.name storagename,d.name goodstypename,
+        (select u.name from user u where u.id=a.userid)username,
+        (select u.name from user u where u.id=a.admin_id)adminname
+        from record a ,goods b,storage c,goodsType d
+        /* where a.goods=b.id
+        and b.storage=c.id and b.goodsType=d.id*/
+        ${ew.customSqlSegment}
+    </select>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.entity.Record">
+        <id column="id" property="id" />
+        <result column="goods" property="goods" />
+        <result column="userId" property="userid" />
+        <result column="admin_id" property="adminId" />
+        <result column="count" property="count" />
+        <result column="createtime" property="createtime" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods, userId, admin_id, count, createtime, remark
+    </sql>
+
+</mapper>

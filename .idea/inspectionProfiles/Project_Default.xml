@@ -1,0 +1,14 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="MavenPackageUpdate" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="excludeList">
+        <list>
+          <option value="com.baomidou:mybatis-plus-generator" />
+          <option value="org.freemarker:freemarker" />
+          <option value="com.baomidou:mybatis-plus-boot-starter" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

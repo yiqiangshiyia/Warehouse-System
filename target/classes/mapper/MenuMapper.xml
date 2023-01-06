@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.MenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.entity.Menu">
+        <id column="id" property="id" />
+        <result column="menuCode" property="menucode" />
+        <result column="menuName" property="menuname" />
+        <result column="menuLevel" property="menulevel" />
+        <result column="menuParentCode" property="menuparentcode" />
+        <result column="menuClick" property="menuclick" />
+        <result column="menuRight" property="menuright" />
+        <result column="menuComponent" property="menucomponent" />
+        <result column="menuIcon" property="menuicon" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, menuCode, menuName, menuLevel, menuParentCode, menuClick, menuRight, menuComponent, menuIcon
+    </sql>
+
+</mapper>
